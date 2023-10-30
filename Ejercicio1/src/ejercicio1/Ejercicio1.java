@@ -1,20 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package ejercicio1;
 
-/**
- *
- * @author joaqu
- */
+import java.util.Scanner;
+
+//Ejercicio 1 Java.- Array con 30 ventas del mes, y que diga cuáles y cuántas son mayores que $2000.
 public class Ejercicio1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        double ventas[] = new double[30];
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Ingrese las ventas del mes: ");
+
+        for (int i = 0; i < ventas.length; i++) {
+            System.out.println("Venta " + (i + 1));
+            ventas[i] = teclado.nextDouble();
+        }
+
+        int k = 0;
+        int total = 0;
+        System.out.println("Ventas mayores o igual a 2000:");
+        while (k < 30) {
+            if (ventas[k] >= 2000) {
+                System.out.println(ventas[k]);
+                total++;
+            }
+            k++;
+        }
+        
+        System.out.println("El total de ventas mayores a 2000 es " + total);
     }
-    
 }
